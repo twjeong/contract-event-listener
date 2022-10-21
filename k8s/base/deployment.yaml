@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosaic-blockchain-deployment
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosaic-square-blockchain
+  template:
+    metadata:
+      labels:
+        app: mosaic-square-blockchain
+        tier: backend
+    spec:
+      containers:
+        - name: mosaic-square-blockchain
+          image: mosaic-square-blockchain
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "60"]
+          ports:
+            - containerPort: 80
+      terminationGracePeriodSeconds: 70

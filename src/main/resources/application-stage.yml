@@ -1,0 +1,22 @@
+spring:
+  config:
+    activate:
+      on-profile: stage
+logging:
+  level:
+    root: warn
+web3j:
+  client-address:
+  contract-address:
+    nft:
+    first-market:
+  credential:
+    private-key:
+cloud:
+  aws:
+    region:
+      static:
+aws:
+  sqs:
+    end-point:
+    eth-event-queue:

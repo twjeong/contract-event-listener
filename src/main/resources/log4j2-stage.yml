@@ -1,0 +1,17 @@
+Configuration:
+  name: stage
+
+  appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern:
+          "%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}
+           ${LOG_LEVEL_PATTERN:-%5p}
+           ${sys:PID} [%15.15t] %c{-1} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+
+  Loggers:
+    Root:
+      AppenderRef:
+        - ref: Console_Appender

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mosaic-square-blockchain
+  namespace: mosaic-square
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /info
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+  selector:
+    app: mosaic-square-blockchain

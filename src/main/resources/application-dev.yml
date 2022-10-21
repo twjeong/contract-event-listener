@@ -1,0 +1,42 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+web3j:
+  protocol: https
+  client-address:
+    https: https://eth-goerli.g.alchemy.com/v2/qSg7peucEoupS_V2MzB8v-V5eV5ROUG2
+    wss: wss://eth-goerli.g.alchemy.com/v2/qSg7peucEoupS_V2MzB8v-V5eV5ROUG2
+  contract-address:
+    nft: '0x490e5458DA882fe5e75d3E248A132D4F2d5FFd8E'
+    admin: '0xAF91EA4bB1bfCd9780e32D74e8a8CFBA1c357fFc'
+    factory: '0x857fB590F1db5eDEdBE9f5353FCc960B6997cBfE'
+    primary-market: '0xe37ACaEA936ab04C72C9F9Dc88bE61C63f99a0e5'
+    secondary-market: '0xef82d4F56b3eB9dB09dA93d569f3416f8DdC58EF'
+  start-block:
+    number: 7270064
+    force: false
+  credentials:
+    private-key: '0x8d22a0aa9c43da157ebc24bc7d70c26d198381e042ab93434757752e3f0ee8e5'
+cloud:
+  aws:
+    region: ap-northeast-2
+    sqs:
+      end-point: https://sqs.ap-northeast-2.amazonaws.com/108199670400
+      eth:
+        admin: dev-mos-eth-admin.fifo
+        factory: dev-mos-eth-factory.fifo
+        nft: dev-mos-eth-nft.fifo
+        primary-market: dev-mos-eth-primary-market.fifo
+        secondary-market: dev-mos-eth-secondary-market.fifo
+    credentials:
+      access-key-id: AKIARSMJT6KAIKVJPVM6
+      secret-access-key: 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
+
+logging:
+  level:
+    org.springframework: INFO
+    com.mosaicsquare: DEBUG
+    kotlin.reflect: DEBUG
+  config: classpath:log4j2-dev.yml
